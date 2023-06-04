@@ -1,0 +1,30 @@
+//Creacion del Proyecto
+
+* Inicializar un proyecto en con Node:
+npm init
+Esto agrega el archivo package.json
+
+* Agregar apartado script en el package.js:
+
+"scripts": {
+    "start": "node index.js",
+    "dev":"nodemon index.js"
+},
+
+* Instalar Express en Node:
+
+npm install express
+
+Genera la carpeta node_modules y modifica las dependencias en package.json
+
+* Instalar nodemon
+npm install nodemon -D
+
+
+
+
+
+
+
+
+
