@@ -20,6 +20,20 @@ Genera la carpeta node_modules y modifica las dependencias en package.json
 * Instalar nodemon
 npm install nodemon -D
 
+* Instalar mongoose
+
+npm install moongoose
+
+Permite conectar a BD MongoDb
+
+Configuracion de Conexion:
+
+const urlMogoSrv = "mongodb://localhost/Colegios";
+
+mongoose.connect(urlMogoSrv, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 
 
