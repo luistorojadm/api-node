@@ -28,12 +28,21 @@ Permite conectar a BD MongoDb
 
 Configuracion de Conexion:
 
-const urlMogoSrv = "mongodb://localhost/Colegios";
+const mongoose = require("mongoose");
+const urlMogoSrv = "mongodb://127.0.0.1:27017/tareas";
 
-mongoose.connect(urlMogoSrv, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+const connectDB = async () => {
+  try {
+    await mongoose.connect(urlMogoSrv, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+module.exports = connectDB;
 
 
 

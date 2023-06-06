@@ -1,19 +1,13 @@
-const mongoose = require("mongoose");
 const app = require("./app");
 const port = 3000;
-const urlMogoSrv = "mongodb://localhost:27017/notas";
+const mongoose = require("mongoose");
+const connectDB = require("./conexioDb");
 
-const connectDB = async () => {
-  try {
-    await mongoose.connect(urlMogoSrv, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-  } catch (error) {
-    console.log(error);
-  }
-};
+connectDB();
 
-app.listen(port, () => {
-  console.log("servidor is on port " + port);
+mongoose.connection.once("open", () => {
+  console.log("conect");
+  app.listen(port, () => {
+    console.log("servidor is on port " + port);
+  });
 });
