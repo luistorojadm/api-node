@@ -28,6 +28,8 @@ Permite conectar a BD MongoDb
 
 Configuracion de Conexion:
 
+esto se deja en un archivo conexion.js
+
 const mongoose = require("mongoose");
 const urlMogoSrv = "mongodb://127.0.0.1:27017/tareas";
 
@@ -43,6 +45,11 @@ const connectDB = async () => {
 };
 
 module.exports = connectDB;
+
+luego se importa y se ejecuta desde index.js
+const connectDB = require("./conexioDb");
+
+connectDB();
 
 
 
